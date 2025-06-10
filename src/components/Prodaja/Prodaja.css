@@ -1,0 +1,68 @@
+.mobile-slider {
+  display: none; /* Hidden by default */
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Add rounded corners */
+  padding: 0 10px; /* Add padding around the image */
+}
+
+.slick-dots {
+  display: flex !important; /* Force flex layout */
+  flex-direction: row; /* Ensure dots are in a row */
+  justify-content: center; /* Center the dots horizontally */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.slick-dots li {
+  display: inline-block; /* Ensure dots are inline */
+  margin: 0; /* Remove default margin */
+}
+
+.slick-dots li button {
+  display: inline-block; /* Ensure buttons are inline */
+  padding: 0; /* Remove default padding */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* Adjust dot size */
+  color: #ccc; /* Default dot color */
+}
+
+.slick-dots li.slick-active button:before {
+  color: white; /* Active dot color */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 16px;
+  color: #fff; /* Arrow color */
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-slider {
+    display: block; /* Show slider for mobile screens */
+    max-width: 100%;
+    padding: 10px 0; /* Add spacing around the slider */
+  }
+}

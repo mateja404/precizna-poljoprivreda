@@ -1,0 +1,21 @@
+.BurgerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px; /* Adjust width for size */
+  height: 24px; /* Adjust height for size */
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.BurgerMenu span {
+  display: block;
+  height: 2px; /* Thickness of each line */
+  background-color: #000; /* Line color */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.LogoContainer {
+  display: flex;
+}

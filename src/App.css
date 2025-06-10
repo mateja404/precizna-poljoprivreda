@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  text-align: start;
+}
+
+/* @media (max-width: 768px) {
+  .home-section {
+    display: none;
+  }
+} */
+
+/* Hide HomePageSection on phones */
+.strelica-usluge {
+  padding-left: 60px;
+  padding-bottom: 10px;
+}
+
+.strelica-kursevi {
+  padding-left: 60px;
+  padding-bottom: 10px;
+}
+
+.p__onama {
+  text-align: center;
+}
+/* zuta linija na indkurspage */
+#borderline {
+  margin-bottom: 10px;
+  border-color: #ffca00;
+}
+
+.center {
+  background-color: #ffca00;
+}
+
+/* #custom-image {
+  display: inline;
+  vertical-align: top;
+  margin-left: 50px;
+  margin-top: 20px;
+
+} */
+
+#kurs-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.column {
+  font-size: 22px;
+  text-align: center;
+
+  @media screen and (max-width: 375px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 20px;
+  }
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  justify-self: center;
+}
+
+.tbody .row .column {
+  padding: 5px;
+}
+
+/* DROPDOWN KURS */
+
+.kurs-item {
+  margin-bottom: 5px; /* Adjust the space between list items */
+  line-height: 1.45; /* Adjust the line height for better spacing between words */
+}
+
+/* .predavaci-list {
+  margin-bottom: 50px; 
+} */
+/* Space between the <ol> elements */
+
+.predavaci-list li {
+  margin-bottom: 10px; /* Space between list items within the <ol> */
+}
+
+/* p {
+  margin-bottom: 10px; 
+} */
+/* 
+.sidebar-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+} */
