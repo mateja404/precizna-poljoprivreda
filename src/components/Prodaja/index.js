@@ -52,6 +52,7 @@ const Prodaja = () => {
   const [hover, setHover] = useState(false);
   const [sliderRef, setSliderRef] = useState(null);
   const [sliderRefTwo, setSliderRefTwo] = useState(null);
+  const maxWords = 50;
 
   function handleArrowClick(direction) {
     if (direction === "left") {
@@ -67,6 +68,14 @@ const Prodaja = () => {
     setHover(!hover);
   };
 
+  const truncateDescription = (description) => {
+    const maxWords = 50;  // Maksimalan broj reči pre skraćivanja
+    const words = description.split(" ");  // Deljenje teksta na reči
+    if (words.length > maxWords) {
+      return `${words.slice(0, maxWords).join(" ")}...`;  // Skraćivanje
+    }
+    return description;
+  };
   return (
     <KursContainer>
       <WrapperH1P>
@@ -105,15 +114,10 @@ const Prodaja = () => {
                   </KursIconWrapper>
                   <KursH2PWrapper>
                     <KursH2>{el.title}</KursH2>
-                    <KursP> {el.description}</KursP>
-                    <KursPprice>
-                      <div className="burger-icon">
-                        <div className="burger-line"></div>
-                        <div className="burger-line"></div>
-                        <div className="burger-line"></div>
-                      </div>
-                      {el.price}
-                    </KursPprice>
+                    <KursP>
+                      {truncateDescription(el.description)}
+                      {el.description.split(" ").length > maxWords && <strong>&nbsp;info</strong>}
+                    </KursP>
                   </KursH2PWrapper>
                 </KursCard>
                 <Dots />

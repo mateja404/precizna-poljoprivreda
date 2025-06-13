@@ -247,14 +247,13 @@ export const KursCard = styled(Link)`
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 10px;
-  height: 620px;
+  height: 480px;
   width: 383px;
   border-left: 5px solid rgb(17, 29, 30);
-
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-
   transition: all 0.2s ease-in-out;
   color: #fff;
+  z-index: 10;
 
   &:hover {
     transform: scale(1.02);
@@ -345,7 +344,7 @@ export const KursP = styled.p`
   color: black;
   padding: 0 10px;
   line-height: 25px;
-
+  
   @media screen and (max-width: 375px) {
     font-size: 14px !important;
   }
@@ -354,6 +353,7 @@ export const KursP = styled.p`
     font-size: 13px !important;
   }
 `;
+
 export const KursPprice = styled.div`
   display: flex; /* Align items horizontally */
   align-items: center; /* Center align the items vertically */
