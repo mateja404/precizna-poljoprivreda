@@ -16,37 +16,60 @@ const HomePageSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (desktopVideoRef.current) {
-      desktopVideoRef.current.muted = muted;
-    }
-    if (mobileVideoRef.current) {
-      mobileVideoRef.current.muted = muted;
+  if (desktopVideoRef.current) {
+    desktopVideoRef.current.muted = muted;
+  }
+  if (mobileVideoRef.current) {
+    mobileVideoRef.current.muted = muted;
+  }
+
+    if (!muted) {
+      if (window.innerWidth >= 768) {
+        if (desktopVideoRef.current) {
+          desktopVideoRef.current.muted = false;
+        }
+        if (mobileVideoRef.current) {
+          mobileVideoRef.current.muted = true;
+        }
+      } else {
+        if (desktopVideoRef.current) {
+          desktopVideoRef.current.muted = true;
+        }
+        if (mobileVideoRef.current) {
+          mobileVideoRef.current.muted = false;
+        }
+      }
     }
   }, [muted]);
 
-  // Efekat za kontrolu reprodukcije/pauze videa na osnovu slajda
   useEffect(() => {
-    console.log("Current slide:", currentSlide);
     if (currentSlide === 0) {
-      // Ako je slajd video slajd (indeks 0)
       if (desktopVideoRef.current) {
-        desktopVideoRef.current.play()
-        .catch((error) => {
-          console.log(error);
-        });
+        if (desktopVideoRef.current.readyState >= 3) {
+          desktopVideoRef.current.play().catch((error) => {
+            console.log("Error playing desktop video:", error);
+          });
+        } else {
+          console.log("Desktop video is not ready to play yet");
+        }
       }
+
       if (mobileVideoRef.current) {
-        console.log("Attempting to play mobile video...");
-        mobileVideoRef.current.play().catch((error) => {
-          console.error("Greška pri reprodukciji mobilnog videa:", error);
-        });
+        if (mobileVideoRef.current.readyState >= 3) {
+          mobileVideoRef.current.play().catch((error) => {
+            console.error("Error playing mobile video:", error);
+          });
+        } else {
+          console.log("Mobile video is not ready to play yet");
+        }
       }
     } else {
-      // Ako nije video slajd, pauziraj video
       if (desktopVideoRef.current) {
+        const currentDesktopTime = desktopVideoRef.current.currentTime;
         desktopVideoRef.current.pause();
       }
       if (mobileVideoRef.current) {
+        const currentMobileTime = mobileVideoRef.current.currentTime;
         mobileVideoRef.current.pause();
       }
     }
@@ -89,7 +112,6 @@ const HomePageSection = () => {
       </div>
     ),
   };
-
   return (
     <div id="home" className="home-page-container">
       <Slider className="slider" ref={sliderRef} {...settings}>
@@ -101,7 +123,7 @@ const HomePageSection = () => {
             controlsList="nodownload nofullscreen noremoteplayback"
             autoPlay
             loop
-              muted={muted}
+            muted={muted}
             playsInline
             style={{
               width: "100%",
