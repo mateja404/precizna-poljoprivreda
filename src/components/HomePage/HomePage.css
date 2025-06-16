@@ -88,26 +88,6 @@
   }
 }
 
-.slick-dots {
-  bottom: 10px !important;
-}
-
-.slick-dots li {
-  margin: 0 5px;
-}
-
-.slick-dots li button:before {
-  font-size: 0;
-}
-
-.slick-dots li .custom-dot {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.slick-dots li .slick-active {
-  background: red;
-}
-
 .learn-more-button {
   background-color: transparent;
   color: white;

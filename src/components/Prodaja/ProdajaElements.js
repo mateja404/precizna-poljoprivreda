@@ -29,12 +29,10 @@ export const KursContainer = styled.div`
     flex-direction: column;
   }
 
-
-
   @media screen and (max-width: 480px) {
-
-    
+    height: 900px;
   }
+  
   &::after {
     content: '';
     position: absolute;
@@ -278,19 +276,6 @@ export const KursCard = styled(Link)`
 
 export const Dots = styled.div`
   display: none;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: -20px;
-
-  &::before {
-    content: "●\u00A0\u00A0\u00A0●\u00A0\u00A0\u00A0●";
-    font-size: 1.5rem;
-    color: #000;
-  }
-
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
 `;
 
 export const KursIconWrapper = styled.div`
