@@ -24,7 +24,6 @@ function App() {
         <Route path="/prodaja/:id" element={<IndProdajaPage />} />
         <Route path="/usluga/:id" element={<IndUslugaPage />} />
         <Route path="/mapa" element={<Mapa />} />
-
         <Route path="/kursevi" element={<KurseviPage />} />
         <Route path="/kurs/:id" element={<IndKursPage />} />
         <Route path="/onama" element={<OnamaPage />} />

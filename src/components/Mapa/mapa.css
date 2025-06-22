@@ -11,3 +11,12 @@
   background-color: #f9f9f9;
   width: 300px;
 }
+
+.custom-marker {
+  width: 3%;
+  height: 3%;
+  background-size: cover;
+  background-image: url('../../../public//djimapicon.png');
+  padding: 10px;
+  cursor: pointer;
+}
